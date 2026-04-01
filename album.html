@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yo Music — Álbum</title>
+    <link rel="shortcut icon" href="imagens/faviconYoMusic.png" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+  
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+       <a class="site-logo" href="index.html">
+          <span style="background:var(--text);color:var(--accent);padding:1px 6px;font-weight:700">YO</span>
+          MUSIC 
+        </span>
+        </a>
+
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#nav">
+          <i class="bi bi-list fs-4" style="color: var(--text)"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="nav">
+          <ul class="navbar-nav mx-auto gap-1 my-2 my-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">home</a>
+            </li>
+             <li class="nav-item"> <a class="nav-link" href="perfil.html">meu perfil</a></li>
+          </ul>
+          <div class="d-flex gap-2 align-items-center mt-2 mt-lg-0">
+            <div style="margin-right: 8px">
+              <button id="theme-toggle" onclick="toggleTheme()">
+                <span id="toggle-label">◐ escuro</span>
+              </button>
+            </div>
+            <div class="input-group" style="width: 190px">
+              <span class="input-group-text search-icon">
+                <i class="bi bi-search" style="font-size: 12px"></i>
+              </span>
+              <input
+                type="text"
+                class="form-control search-field"
+                placeholder="buscar..." />
+            </div>
+            
+            <div
+              class="profile-init"
+              style="width: 36px; height: 36px; font-size: 14px">
+              AR
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+    <div class="container" style="display: flex; align-items: center">
+      <section class="album-hero">
+        <div class="container">
+          <a href="index.html" class="back-link">← voltar</a>
+
+          <div class="d-flex gap-4 flex-wrap align-items-start">
+            <div class="album-cover-wrap" id="albumCoverBg">
+              <img id="albumCover" src="" alt="" />
+            </div>
+
+            <div class="flex-grow-1 pt-1">
+              <div class="album-sub" id="albumArtist">carregando...</div>
+              <div class="album-title-big mb-1" id="albumTitle">
+                carregando...
+              </div>
+              <div class="album-sub mb-4" id="albumYear"></div>
+              <button
+                class="wishlist-btn"
+                id="albumLikeBtn"
+                onclick="toggleAlbumLikePage()">
+                ♡ curtir este álbum
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <iframe
+        id="albumSource"
+        data-testid="embed-iframe"
+        style="border-radius: 12px"
+        src=""
+        width="64%"
+        height="352"
+        frameborder="0"
+        allowfullscreen=""
+        allow="
+          autoplay;
+          clipboard-write;
+          encrypted-media;
+          fullscreen;
+          picture-in-picture;
+        "
+        loading="lazy"></iframe>
+    </div>
+
+    
+    <div class="container my-5">
+      <div class="row g-4">
+      
+        <div class="col-lg-8">
+        
+          <div class="sidebar-box" id="reviewDisplay" style="display: none">
+            <div class="sidebar-head">// avaliação de arthur</div>
+            <div class="sidebar-body">
+              <div class="review-score-big" id="reviewDisplayScore"></div>
+              <p class="review-quote" id="reviewDisplayText"></p>
+              <div
+                style="
+                  font-size: 11px;
+                  color: var(--text-faint);
+                  font-family: &quot;Courier Prime&quot;, monospace;
+                  margin-bottom: 14px;
+                "
+                id="reviewDisplayDate"></div>
+              <div class="d-flex gap-2">
+                <button class="action-btn" onclick="showEditForm()">
+                  editar
+                </button>
+                <button class="action-btn danger" onclick="deleteReview()">
+                  remover
+                </button>
+              </div>
+            </div>
+          </div>
+
+        
+          <div class="sidebar-box" id="reviewForm">
+            <div class="sidebar-head">// avaliar este álbum</div>
+            <div class="sidebar-body">
+              <div
+                style="
+                  font-size: 12px;
+                  color: var(--text-faint);
+                  font-family: &quot;Courier Prime&quot;, monospace;
+                  margin-bottom: 8px;
+                ">
+                nota:
+              </div>
+              <div class="star-picker" id="starPicker">
+                <span data-v="1">★</span>
+                <span data-v="2">★</span>
+                <span data-v="3">★</span>
+                <span data-v="4">★</span>
+                <span data-v="5">★</span>
+              </div>
+              <div
+                style="
+                  font-size: 12px;
+                  color: var(--text-faint);
+                  font-family: &quot;Courier Prime&quot;, monospace;
+                  margin-bottom: 6px;
+                ">
+                review:
+              </div>
+              <textarea
+                id="reviewText"
+                class="review-textarea"
+                placeholder="o que você achou deste álbum?"></textarea>
+              <button
+                class="btn-main mt-3"
+                style="font-size: 13px; padding: 8px 20px"
+                onclick="saveReview()">
+                salvar review
+              </button>
+            </div>
+          </div>
+        </div>
+
+      
+        <div class="col-lg-4">
+          <div class="sidebar-box">
+            <div class="sidebar-head">// sobre o álbum</div>
+            <div class="sidebar-body">
+              <div
+                style="
+                  font-size: 13px;
+                  color: var(--text-muted);
+                  font-family: &quot;Courier Prime&quot;, monospace;
+                  line-height: 1.9;
+                ">
+                <div>
+                  <strong style="color: var(--text)">artista</strong><br />
+                  <span id="sideArtist">—</span>
+                </div>
+                <div class="mt-2">
+                  <strong style="color: var(--text)">ano</strong><br />
+                  <span id="sideYear">—</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-box">
+            <div class="sidebar-head">// minha lista</div>
+            <div class="sidebar-body">
+              <div
+                style="
+                  font-size: 12px;
+                  color: var(--text-faint);
+                  font-family: &quot;Courier Prime&quot;, monospace;
+                  margin-bottom: 10px;
+                ">
+                adicione álbuns que quer ouvir.
+              </div>
+              <button
+                class="wishlist-btn"
+                style="width: 100%"
+                id="wishlistBtn2"
+                onclick="toggleWishlist()">
+                ♡ quero ouvir
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div
+        class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <span>
+          <span
+            style="
+              background: var(--text);
+              color: var(--accent);
+              padding: 1px 6px;
+              font-weight: 700;
+            "
+            >YO</span
+          >
+          MUSIC — projeto crud
+        </span>
+        <a href="index.html" class="back-link" style="margin: 0"
+          >← voltar ao início</a
+        >
+      </div>
+    </footer>
+
+    <div class="toast-msg" id="toast"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="crud.js"></script>
+  </body>
+</html>

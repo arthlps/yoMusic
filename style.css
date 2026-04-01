@@ -1,0 +1,1247 @@
+:root {
+  --bg: #f5f0e8;
+  --bg-card: #ffffff;
+  --text: #1a1a1a;
+  --text-muted: #555555;
+  --text-faint: #888888;
+  --border: #1a1a1a;
+  --border-soft: #cccccc;
+  --border-dash: #dddddd;
+  --accent: #f5c800;
+  --accent-text: #1a1a1a;
+  --section-bg: #1a1a1a;
+  --section-fg: #f5f0e8;
+  --search-bg: #f5f0e8;
+}
+
+body.dark {
+  --bg: #141414;
+  --bg-card: #1e1e1e;
+  --text: #e8e0d0;
+  --text-muted: #999999;
+  --text-faint: #555555;
+  --border: #e8e0d0;
+  --border-soft: #333333;
+  --border-dash: #2e2e2e;
+  --accent: #d4a800;
+  --accent-text: #141414;
+  --section-bg: #e8e0d0;
+  --section-fg: #141414;
+  --search-bg: #776363;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "Space Grotesk", sans-serif;
+  transition:
+    background-color 0.25s,
+    color 0.25s;
+}
+
+.navbar {
+  background: var(--bg) !important;
+  border-bottom: 2.5px solid var(--border);
+  transition:
+    background-color 0.25s,
+    border-color 0.25s;
+}
+
+.site-logo {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+.site-logo img {
+  width: auto;
+  height: 100px;
+  object-fit: contain;
+}
+.site-logo span {
+  background: var(--text);
+  color: var(--bg);
+  padding: 1px 6px;
+  margin-right: 4px;
+  transition:
+    background 0.25s,
+    color 0.25s;
+}
+
+.nav-link {
+  color: var(--text) !important;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 4px 10px !important;
+  border: 2px solid transparent;
+  transition:
+    border-color 0.15s,
+    background 0.15s,
+    color 0.15s;
+}
+
+.nav-link:hover {
+  border: 2px solid var(--border);
+}
+
+.nav-link.active {
+  border: 2px solid var(--border);
+  background: var(--text);
+  color: var(--bg) !important;
+}
+
+#theme-toggle {
+  background: none;
+  border: 2px solid var(--border);
+  color: var(--text);
+  font-family: "Courier Prime", monospace;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  cursor: pointer;
+  border-radius: 0;
+  transition:
+    background 0.15s,
+    color 0.15s,
+    border-color 0.25s;
+}
+
+#theme-toggle:hover {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+.hero-section {
+  padding: 60px 0 48px;
+  transition: border-color 0.25s;
+}
+
+.hero-tag {
+  font-family: "Courier Prime", monospace;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.hero-tag::before {
+  content: "// ";
+}
+
+.hero-h1 {
+  font-family: "Courier Prime", monospace;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero-h1 .underline-yellow {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 4px;
+  text-underline-offset: 4px;
+}
+
+.hero-p {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 400px;
+}
+
+.btn-main {
+  background: var(--text);
+  color: var(--bg);
+  border: 2.5px solid var(--border);
+  border-radius: 0;
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 22px;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+
+.btn-main:hover {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+.btn-outline-main {
+  background: transparent;
+  color: var(--text);
+  border: 2.5px solid var(--border);
+  border-radius: 0;
+  font-family: "Courier Prime", monospace;
+  font-size: 14px;
+  padding: 10px 22px;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+
+.btn-outline-main:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.stats-row {
+  border-bottom: 2.5px solid var(--border);
+  background: var(--accent);
+  transition: border-color 0.25s;
+}
+
+.stat-block {
+  padding: 18px 0;
+  text-align: center;
+  border-right: 2.5px solid var(--accent-text);
+}
+
+.stat-block:last-child {
+  border-right: none;
+}
+
+.stat-n {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1;
+  color: var(--accent-text);
+}
+
+.stat-l {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-text);
+  opacity: 0.65;
+}
+
+.album-cover {
+  border: 2.5px solid var(--border);
+  height: 280px;
+  aspect-ratio: 1;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.album-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+  filter: grayscale(15%);
+  display: block;
+}
+
+.album-cover:hover img {
+  transform: scale(1.06);
+  filter: grayscale(0%);
+}
+
+.album-rating {
+  position: absolute;
+  bottom: 6px;
+  left: 6px;
+  background: var(--accent);
+  border: 2px solid var(--accent-text);
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 1px 6px;
+  color: var(--accent-text);
+}
+
+.album-title {
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 7px;
+  margin-bottom: 1px;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+.album-artist {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-family: "Courier Prime", monospace;
+}
+
+.section-head {
+  border-top: 2.5px solid var(--border);
+  border-bottom: 2.5px solid var(--border);
+  background: var(--section-bg);
+  color: var(--section-fg);
+  padding: 8px 14px;
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition:
+    background 0.25s,
+    color 0.25s,
+    border-color 0.25s;
+}
+
+.section-head a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.review-card {
+  border: 2.5px solid var(--border);
+  padding: 16px;
+  background: var(--bg-card);
+  margin-bottom: 12px;
+  transition:
+    background 0.25s,
+    border-color 0.25s;
+}
+
+.review-user {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--text);
+}
+
+.review-time {
+  font-family: "Courier Prime", monospace;
+  font-size: 11px;
+  color: var(--text-faint);
+}
+
+.review-stars {
+  color: var(--accent);
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.review-text {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin: 8px 0 0;
+}
+
+.review-thumb {
+  width: 62px;
+  height: 62px;
+  border: 2px solid var(--border);
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: border-color 0.25s;
+}
+
+.review-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.like-btn {
+  background: none;
+  border: 1.5px solid var(--border-soft);
+  font-size: 12px;
+  color: var(--text-muted);
+  padding: 2px 10px;
+  cursor: pointer;
+  font-family: "Courier Prime", monospace;
+  transition: all 0.15s;
+}
+
+.like-btn:hover {
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.like-btn.liked {
+  background: var(--text);
+  color: var(--accent);
+  border-color: var(--border);
+}
+
+.sidebar-box {
+  border: 2.5px solid var(--border);
+  margin-bottom: 20px;
+  background: var(--bg-card);
+  transition:
+    background 0.25s,
+    border-color 0.25s;
+}
+
+.sidebar-head {
+  background: var(--section-bg);
+  color: var(--section-fg);
+  padding: 7px 12px;
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition:
+    background 0.25s,
+    color 0.25s;
+}
+
+.sidebar-body {
+  padding: 14px;
+  width: auto;
+}
+
+.trending-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--border-dash);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.trending-row:last-child {
+  border-bottom: none;
+}
+
+.t-num {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--border-soft);
+  width: 20px;
+  flex-shrink: 0;
+}
+
+.t-cover {
+  width: 38px;
+  height: 38px;
+  border: 1.5px solid var(--border);
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: border-color 0.25s;
+}
+
+.t-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.t-title {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text);
+}
+
+.t-artist {
+  font-size: 11px;
+  color: var(--text-faint);
+  font-family: "Courier Prime", monospace;
+}
+
+.t-score {
+  margin-left: auto;
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-size: 13px;
+  background: var(--accent);
+  border: 1.5px solid var(--accent-text);
+  padding: 1px 6px;
+  flex-shrink: 0;
+  color: var(--accent-text);
+}
+
+.genre-pill {
+  display: inline-block;
+  border: 1.5px solid var(--border);
+  font-size: 11px;
+  padding: 3px 10px;
+  margin: 3px 2px;
+  cursor: pointer;
+  font-family: "Courier Prime", monospace;
+  background: transparent;
+  color: var(--text);
+  transition: all 0.15s;
+}
+
+.genre-pill:hover,
+.genre-pill.active {
+  background: var(--text);
+  color: var(--accent);
+}
+
+.profile-init {
+  width: 52px;
+  height: 52px;
+  border: 2.5px solid var(--border);
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--accent-text);
+  transition: border-color 0.25s;
+}
+
+.profile-stat {
+  text-align: center;
+  border-right: 1.5px solid var(--border-soft);
+  padding: 8px 0;
+  transition: border-color 0.25s;
+}
+
+.profile-stat:last-child {
+  border-right: none;
+}
+
+.ps-num {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--text);
+}
+
+.ps-label {
+  font-size: 10px;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+footer {
+  border-top: 2.5px solid var(--border);
+  padding: 20px 0;
+  background: var(--bg);
+  font-family: "Courier Prime", monospace;
+  font-size: 13px;
+  color: var(--text-muted);
+  transition:
+    background 0.25s,
+    border-color 0.25s;
+}
+
+.main-divider {
+  border-top: 2.5px solid var(--border);
+  margin: 0;
+}
+
+.form-control.search-field {
+  border: 2px solid var(--border);
+  border-radius: 0;
+  background: var(--search-bg);
+  font-family: "Courier Prime", monospace;
+  font-size: 13px;
+  color: var(--text);
+  transition:
+    background 0.25s,
+    border-color 0.25s,
+    color 0.25s;
+}
+
+.form-control.search-field:focus {
+  box-shadow: none;
+  border-color: var(--border);
+  background: var(--bg-card);
+  color: var(--text);
+}
+
+.form-control.search-field::placeholder {
+  color: var(--text-faint);
+}
+
+.input-group-text.search-icon {
+  background: var(--text);
+  color: var(--accent);
+  border: 2px solid var(--border);
+  border-radius: 0;
+  transition:
+    background 0.25s,
+    border-color 0.25s;
+}
+
+.album-hero {
+  padding: 40px 0 48px;
+  transition: border-color 0.25s;
+}
+
+.album-cover-wrap {
+  width: 200px;
+  height: 200px;
+  border: 2.5px solid var(--border);
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: border-color 0.25s;
+}
+
+.album-cover-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.album-title-big {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-size: clamp(26px, 4vw, 46px);
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.album-sub {
+  font-family: "Courier Prime", monospace;
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.star-picker {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.star-picker span {
+  font-size: 32px;
+  cursor: pointer;
+  color: var(--border-soft);
+  transition:
+    color 0.1s,
+    transform 0.1s;
+  line-height: 1;
+  user-select: none;
+}
+
+.star-picker span.filled {
+  color: var(--accent);
+}
+.star-picker span:hover {
+  transform: scale(1.15);
+}
+
+.review-textarea {
+  border: 2px solid var(--border);
+  border-radius: 0;
+  background: var(--search-bg);
+  font-family: "Courier Prime", monospace;
+  font-size: 13px;
+  color: var(--text);
+  padding: 10px;
+  width: 100%;
+  resize: vertical;
+  min-height: 90px;
+  transition:
+    background 0.25s,
+    border-color 0.25s,
+    color 0.25s;
+}
+
+.review-textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: var(--bg-card);
+}
+
+.review-textarea::placeholder {
+  color: var(--text-faint);
+}
+
+.review-score-big {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--accent);
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.review-quote {
+  font-family: "Courier Prime", monospace;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  font-style: italic;
+  margin-bottom: 12px;
+}
+
+.action-btn {
+  background: none;
+  border: 1.5px solid var(--border-soft);
+  color: var(--text-muted);
+  font-size: 12px;
+  padding: 4px 12px;
+  cursor: pointer;
+  font-family: "Courier Prime", monospace;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.15s;
+}
+
+.action-btn:hover {
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.action-btn.danger:hover {
+  background: #c0392b;
+  border-color: #c0392b;
+  color: #fff;
+}
+
+.wishlist-btn {
+  background: none;
+  border: 2px solid var(--border);
+  color: var(--text);
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 8px 18px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.wishlist-btn:hover,
+.wishlist-btn.active {
+  background: var(--accent);
+  color: var(--accent-text);
+  border-color: var(--border);
+}
+
+.back-link {
+  font-family: "Courier Prime", monospace;
+  font-size: 13px;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+  display: inline-block;
+  margin-bottom: 24px;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.toast-msg {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--text);
+  color: var(--bg);
+  font-family: "Courier Prime", monospace;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px 20px;
+  border: 2px solid var(--accent);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.toast-msg.show {
+  opacity: 1;
+}
+
+.search-overlay {
+  background: var(--bg);
+  border-bottom: 2.5px solid var(--border);
+  padding: 28px 0;
+  transition:
+    background 0.25s,
+    border-color 0.25s;
+}
+
+.back-link {
+  font-family: "Courier Prime", monospace;
+  font-size: 13px;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.15s;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.back-link:hover {
+  color: var(--accent);
+}
+
+.action-btn {
+  background: none;
+  border: 1.5px solid var(--border-soft);
+  color: var(--text-muted);
+  font-size: 12px;
+  padding: 4px 12px;
+  cursor: pointer;
+  font-family: "Courier Prime", monospace;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.15s;
+}
+
+.action-btn:hover {
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.action-btn.danger:hover {
+  background: #c0392b;
+  border-color: #c0392b;
+  color: #fff;
+}
+
+.wishlist-btn {
+  background: none;
+  border: 2px solid var(--border);
+  color: var(--text);
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 8px 18px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.wishlist-btn:hover,
+.wishlist-btn.active {
+  background: var(--accent);
+  color: var(--accent-text);
+  border-color: var(--border);
+}
+
+.album-hero {
+  padding: 40px 0 48px;
+  transition: border-color 0.25s;
+}
+
+.album-cover-wrap {
+  width: 200px;
+  height: 200px;
+  border: 2.5px solid var(--border);
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: border-color 0.25s;
+}
+
+.album-cover-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.album-title-big {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-size: clamp(26px, 4vw, 46px);
+  line-height: 1.1;
+  color: var(--text);
+}
+
+.album-sub {
+  font-family: "Courier Prime", monospace;
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.star-picker {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.star-picker span {
+  font-size: 32px;
+  cursor: pointer;
+  color: var(--border-soft);
+  transition:
+    color 0.1s,
+    transform 0.1s;
+  line-height: 1;
+  user-select: none;
+}
+
+.star-picker span.filled {
+  color: var(--accent);
+}
+.star-picker span:hover {
+  transform: scale(1.15);
+}
+
+.review-textarea {
+  border: 2px solid var(--border);
+  border-radius: 0;
+  background: var(--search-bg);
+  font-family: "Courier Prime", monospace;
+  font-size: 13px;
+  color: var(--text);
+  padding: 10px;
+  width: 100%;
+  resize: vertical;
+  min-height: 90px;
+  transition:
+    background 0.25s,
+    border-color 0.25s,
+    color 0.25s;
+}
+
+.review-textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: var(--bg-card);
+}
+
+.review-textarea::placeholder {
+  color: var(--text-faint);
+}
+
+.review-score-big {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--accent);
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.review-quote {
+  font-family: "Courier Prime", monospace;
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  font-style: italic;
+  margin-bottom: 12px;
+}
+
+.toast-msg {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--text);
+  color: var(--bg);
+  font-family: "Courier Prime", monospace;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 10px 20px;
+  border: 2px solid var(--accent);
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.toast-msg.show {
+  opacity: 1;
+}
+.profile-hero {
+  padding: 40px 0;
+  transition: border-color 0.25s;
+}
+
+.profile-avatar-big {
+  width: 80px;
+  height: 80px;
+  border: 2.5px solid var(--border);
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--accent-text);
+  flex-shrink: 0;
+  transition: border-color 0.25s;
+}
+
+.stat-big {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.stat-big-label {
+  font-size: 11px;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.wishlist-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--border-dash);
+  transition: border-color 0.25s;
+}
+
+.wishlist-item:last-child {
+  border-bottom: none;
+}
+
+.wishlist-thumb {
+  width: 46px;
+  height: 46px;
+  border: 1.5px solid var(--border);
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: border-color 0.25s;
+}
+
+.wishlist-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.empty-state {
+  font-family: "Courier Prime", monospace;
+  font-size: 13px;
+  color: var(--text-faint);
+  padding: 16px 0;
+}
+
+.remove-btn {
+  margin-left: auto;
+  background: none;
+  border: 1.5px solid var(--border-soft);
+  color: var(--text-muted);
+  font-size: 11px;
+  padding: 2px 8px;
+  cursor: pointer;
+  font-family: "Courier Prime", monospace;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+
+.remove-btn:hover {
+  background: #c0392b;
+  border-color: #c0392b;
+  color: #fff;
+}
+.genre-card {
+  border: 2.5px solid var(--border);
+  padding: 28px 16px;
+  text-align: center;
+  cursor: pointer;
+  background: var(--bg-card);
+  text-decoration: none;
+  display: block;
+  transition:
+    background 0.15s,
+    border-color 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+
+.genre-card:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+
+.genre-card:hover .genre-card-name {
+  color: var(--accent);
+}
+.genre-card:hover .genre-card-count {
+  color: var(--bg);
+}
+
+.genre-card-icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.genre-card-name {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--text);
+  display: block;
+  text-transform: lowercase;
+  transition: color 0.15s;
+}
+
+.genre-card-count {
+  font-family: "Courier Prime", monospace;
+  font-size: 11px;
+  color: var(--text-faint);
+  margin-top: 4px;
+  display: block;
+  transition: color 0.15s;
+}
+
+.genre-detail {
+  display: none;
+}
+.genre-detail.show {
+  display: block;
+}
+
+.genre-album-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.album-card-wrap {
+  position: relative;
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.album-cover:hover .card-overlay {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.card-action-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition:
+    background 0.15s,
+    border-color 0.15s,
+    transform 0.15s;
+  line-height: 1;
+}
+
+.card-action-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+  transform: scale(1.15);
+}
+
+.card-action-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+.profile-hero {
+  padding: 40px 0;
+  transition: border-color 0.25s;
+}
+
+.profile-avatar-big {
+  width: 80px;
+  height: 80px;
+  border: 2.5px solid var(--border);
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--accent-text);
+  flex-shrink: 0;
+  transition: border-color 0.25s;
+}
+
+.stat-big {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.stat-big-label {
+  font-size: 11px;
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.wishlist-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--border-dash);
+  transition: border-color 0.25s;
+}
+
+.wishlist-item:last-child {
+  border-bottom: none;
+}
+
+.wishlist-thumb {
+  width: 46px;
+  height: 46px;
+  border: 1.5px solid var(--border);
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: border-color 0.25s;
+}
+
+.wishlist-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.empty-state {
+  font-family: "Courier Prime", monospace;
+  font-size: 13px;
+  color: var(--text-faint);
+  padding: 16px 0;
+}
+
+.remove-btn {
+  margin-left: auto;
+  background: none;
+  border: 1.5px solid var(--border-soft);
+  color: var(--text-muted);
+  font-size: 11px;
+  padding: 2px 8px;
+  cursor: pointer;
+  font-family: "Courier Prime", monospace;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+
+.remove-btn:hover {
+  background: #c0392b;
+  border-color: #c0392b;
+  color: #fff;
+}
