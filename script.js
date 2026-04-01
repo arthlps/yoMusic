@@ -228,7 +228,7 @@ fetch("object.json")
         col.innerHTML = `
           <div class="album-cover" style="background:${a.color}">
             <img src="${a.img}" alt="${a.title}" loading="lazy"
-                 onerror="this.style.display='none'">
+                 onerror="this.style.display='none'">                           
             <div class="album-rating">${a.rating}</div>
           </div>`;
         heroGrid.appendChild(col);

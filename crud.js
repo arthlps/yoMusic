@@ -390,6 +390,8 @@ function initAlbumPage() {
       const sideYear = document.getElementById("sideYear");
       if (sideArtist) sideArtist.textContent = album.artist;
       if (sideYear) sideYear.textContent = album.year;
+
+      renderAlbumLikeBtn();
     });
 
   initStarPicker();
